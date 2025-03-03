@@ -61,3 +61,30 @@ function removeInventoryItem(item) {
     inventoryList.removeChild(item);
 };
 
+//Task 4 Customer Selection
+
+// Choses the customer
+const customerSection = document.getElementById("customerSection");
+
+// Created function that creates and adds customer cards
+function addCustomerCard(customerName) {
+    const card = document.createElement("div"); 
+    card.setAttribute("class", "customer-card");
+    card.textContent = customerName;
+
+    // This will add a click event listener
+    card.addEventListener("click", function (event) {
+        console.log("Customer card clicked: " + customerName); 
+        event.stopPropagation();
+        });
+
+    // Will append customers card to the customer section
+    customerSection.appendChild(card);
+};
+//Event listener listens for clicks in customer selection
+customerSection.addEventListener("click", function () { 
+    // Logs clicks in customer section to console
+    console.log("Customer section clicked"); 
+});
+
+
