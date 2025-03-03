@@ -26,3 +26,13 @@ card.appendChild(cardValue);
 dashboardDiv.appendChild(card);
 };
 
+//Task 2 Updating Dashboard Metrics
+
+//Converts all metric card elements into an array
+const metricCards = Array.from(document.querySelectorAll(".metric-card"));
+//Changes color and updates text
+metricCards.forEach(card => { 
+    card.style.backgroundColor = "orange";
+    card.querySelector("h3").textContent += " - Updated";
+});
+
