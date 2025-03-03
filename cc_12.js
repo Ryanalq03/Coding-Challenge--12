@@ -36,3 +36,28 @@ metricCards.forEach(card => {
     card.querySelector("h3").textContent += " - Updated";
 });
 
+//Task 3 Dynamic Inventory Management
+
+//This will choose an inventory list container
+const inventoryList = document.getElementById("inventoryList");
+
+// Created function that adds a new inventory item
+function addInventoryItem(productName) {
+    const listItem = document.createElement("li"); 
+    listItem.setAttribute("class", "product-item"); 
+    listItem.setAttribute("data-product", productName); 
+
+    // This adds an event listener which removes item when clicked
+    listItem.addEventListener("click", function () {
+        removeInventoryItem(listItem); 
+    });
+
+    // Appends product item
+    inventoryList.appendChild(listItem);
+};
+
+// Will remove item when clicked on
+function removeInventoryItem(item) {
+    inventoryList.removeChild(item);
+};
+
